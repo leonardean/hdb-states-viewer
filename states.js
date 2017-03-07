@@ -21,7 +21,7 @@ program
 // console.log(program.size)
 // console.log(program.orderBy)
 // console.log(program.orderAs)
-// console.log(program.saveAs)
+// console.log(typeof program.saveAs)
 
 var timeRangeRegex = /^([0-9]+)([mhdM])$/i
 var matches = timeRangeRegex.exec(program.last)
@@ -83,8 +83,7 @@ request(options, function (error, response, body) {
   	result.push(data['_source'])
   })
   console.log(beautify(result, null, 2, 100))
-	if (program.saveAs)
-		console.log(program.saveAs)
+	if (program.saveAs != undefined)
 		fs.writeFile(program.saveAs, beautify(result, null, 2, 100), function(error) {
 			if (error) {
 				console.error("write error:  " + error.message);
