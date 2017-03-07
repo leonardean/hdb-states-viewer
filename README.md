@@ -25,8 +25,25 @@ node states --help
     -S, --saveAs [string]               Set destination file name
 ```
 ### Examples
-1. 
+1. Default query
+ ```
+ node states
+ ```
+ this command queries history states data of all devices during last day, with maximum display of 10000 records, ordered by `timeStamp` in descending orientation
+
+2. Custom query
+ ```
+ node states -i 0003 -l 2h -f 20 -s 20 -o timeStamp -O asc
+ ```
+ this command queries history states data of device `0003` during last 2 hours, with maximum display of 20 recods, ordered by `timeStamp` in ascending orientation. this query skips the first 20 records. skipping is useful when pagination is needed.
+ 
+3. Save result to local file
+ ```
+ node states -i 0003 -l 2h -f 20 -s 20 -o timeStamp -O asc -S data.json
+ ```
+ this command queries the same data as the previous one, but saves the result data as local file `data.json`
+ 
+Please note that one option only support one value, command like below is not support:
 ```
-node states
+node states -i 0001 0002
 ```
-this command queries history states data of all devices during last day, with maximum display of 10000 records, ordered by `timeStamp` in descending orientation
