@@ -1,5 +1,5 @@
 # hdb-states-viewer
-### Dependency installatio
+### Dependency installation
 ```
 npm install
 ```
@@ -35,7 +35,80 @@ node states --help
  ```
  node states -i 0003 -l 2h -f 20 -s 20 -o timeStamp -O asc
  ```
- this command queries history states data of device `0003` during last 2 hours, with maximum display of 20 recods, ordered by `timeStamp` in ascending orientation. this query skips the first 20 records. skipping is useful when pagination is needed.
+ this command queries history states data of device `0003` during last 2 hours, with maximum display of 20 recods, ordered by `timeStamp` in ascending orientation. this query skips the first 20 records. skipping is useful when pagination is needed. this query returns the following
+ ```
+ [
+  {
+    "state": {
+      "activeTotal": 6.779000282287598,
+      "activeMD": 0,
+      "apparentTotal": 0,
+      "Timestamp": 1488869006900,
+      "deviceID": "0003",
+      "apparentMD": 0,
+      "activeTotalChange": 0.026999950408935547,
+      "apparentTotalChange": 0
+    },
+    "thingID": "th.7c698b427320-e56a-6e11-743f-007dea38",
+    "timeStamp": "2017-03-07T06:43:27.594Z",
+    "fields": {
+      "_thingType": "EnergyNode",
+      "_layoutPosition": "END_NODE",
+      "_stringField1": "Washing Machine",
+      "_stringField2": "Kitchen",
+      "_stringField3": "plug_03",
+      "_numberField1": 915,
+      "_numberField2": 845
+    }
+  },
+  {
+    "state": {
+      "activeTotal": 6.805000305175781,
+      "activeMD": 0,
+      "apparentTotal": 0,
+      "Timestamp": 1488869321324,
+      "deviceID": "0003",
+      "apparentMD": 0,
+      "activeTotalChange": 0.026000022888183594,
+      "apparentTotalChange": 0
+    },
+    "thingID": "th.7c698b427320-e56a-6e11-743f-007dea38",
+    "timeStamp": "2017-03-07T06:48:42.944Z",
+    "fields": {
+      "_thingType": "EnergyNode",
+      "_layoutPosition": "END_NODE",
+      "_stringField1": "Washing Machine",
+      "_stringField2": "Kitchen",
+      "_stringField3": "plug_03",
+      "_numberField1": 915,
+      "_numberField2": 845
+    }
+  },
+  {
+    "state": {
+      "activeTotal": 6.831000328063965,
+      "activeMD": 0,
+      "apparentTotal": 0,
+      "Timestamp": 1488869621329,
+      "deviceID": "0003",
+      "apparentMD": 0,
+      "activeTotalChange": 0.026000022888183594,
+      "apparentTotalChange": 0
+    },
+    "thingID": "th.7c698b427320-e56a-6e11-743f-007dea38",
+    "timeStamp": "2017-03-07T06:53:43.209Z",
+    "fields": {
+      "_thingType": "EnergyNode",
+      "_layoutPosition": "END_NODE",
+      "_stringField1": "Washing Machine",
+      "_stringField2": "Kitchen",
+      "_stringField3": "plug_03",
+      "_numberField1": 915,
+      "_numberField2": 845
+    }
+  }
+]
+ ```
  
 3. Save result to local file
  ```
